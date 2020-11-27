@@ -6,10 +6,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { StudentListComponent } from './student-list/student-list.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/students', pathMatch: 'full' },
+  { path: '', redirectTo: '/departments-list', pathMatch: 'full' },
   { path: 'students', component: StudentListComponent},
-  { path: 'departments', component: DepartmentListComponent},
-  { path: 'departments/:id', component: DepartmentDetailComponent },
+  { path: 'departments-list', component: DepartmentListComponent},
+  { path: 'departments-list/:id', component: DepartmentDetailComponent },
   { path: "**", component: PageNotFoundComponent }
 ];
 

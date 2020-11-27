@@ -14,13 +14,12 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
       </div>
     </div>
   `,
-  styles: [
-  ]
+  styles: [],
 })
 export class DepartmentDetailComponent implements OnInit {
   public departmentId;
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     // let id = parseInt(this.route.snapshot.paramMap.get('id'));
@@ -30,9 +29,7 @@ export class DepartmentDetailComponent implements OnInit {
     this.route.paramMap.subscribe((params: ParamMap) => {
       let id = parseInt(params.get('id'));
       this.departmentId = id;
-    })
-
-    
+    });
   }
 
   goPrevious() {
@@ -47,7 +44,9 @@ export class DepartmentDetailComponent implements OnInit {
 
   goDepartments() {
     let selectedId = this.departmentId ? this.departmentId : null;
-    this.router.navigate(['/departments', {id: selectedId}])
-  }
+    // this.router.navigate(['/departments', {id: selectedId, test: 'testVal'}]);
 
+    // Relative parameter argument
+    this.router.navigate(['../', { id: selectedId }], { relativeTo: this.route });
+  }
 }
