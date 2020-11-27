@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 // import { StudentListComponent } from './student-list/student-list.component';
 // import { DepartmentListComponent } from './department-list/department-list.component';
 
@@ -11,7 +12,8 @@ import { AppComponent } from './app.component';
     AppComponent,
     // StudentListComponent,
     // DepartmentListComponent
-    routingComponents
+    routingComponents,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
